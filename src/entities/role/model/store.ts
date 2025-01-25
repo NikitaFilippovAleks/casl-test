@@ -1,6 +1,5 @@
 import { create } from 'zustand';
-
-type TRole = 'actor' | 'director' | null;
+import { TRole } from './types';
 
 type TState = {
   role: TRole;
@@ -11,6 +10,6 @@ type TActions = {
 };
 
 export const useRoleStore = create<TState & TActions>(set => ({
-  role: null,
+  role: 'unset',
   setRole: role => set(() => ({ role }))
 }));
